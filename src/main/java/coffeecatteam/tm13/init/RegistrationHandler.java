@@ -5,6 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.world.biome.Biome;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -22,12 +23,15 @@ public class RegistrationHandler {
 
     public static final Set<Item> ITEMS = new HashSet<>();
     public static final Set<Block> BLOCKS = new HashSet<>();
+    public static final Set<Biome> BIOMES = new HashSet<>();
 
     public static void init() {
         InitItem.init();
         TestMod13.logger.info("Items registered");
         InitBlock.init();
         TestMod13.logger.info("Blocks registered");
+        InitBiome.init();
+        TestMod13.logger.info("Biomes registered");
     }
 
     @SubscribeEvent
@@ -44,6 +48,14 @@ public class RegistrationHandler {
 
         for (Block block : BLOCKS)
             reg.register(block);
+    }
+
+    @SubscribeEvent
+    public void registerBiomes(final RegistryEvent.Register<Biome> event) {
+        IForgeRegistry<Biome> reg = event.getRegistry();
+
+        for (Biome biome : BIOMES)
+            reg.register(biome);
     }
 
     public static void registerItem(Item item) {
@@ -76,5 +88,9 @@ public class RegistrationHandler {
         for (Block block : blocks) {
             registerBlock(null, block);
         }
+    }
+
+    public static void registerBiome(Biome biome) {
+        BIOMES.add(biome);
     }
 }
