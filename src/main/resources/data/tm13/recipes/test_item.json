@@ -1,0 +1,12 @@
+{
+  "type": "crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tm13:test_block"
+    }
+  ],
+  "result": {
+    "item": "tm13:test_item",
+    "count": 3
+  }
+}

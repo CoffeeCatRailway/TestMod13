@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "type=bottom": { "model": "tm13:block/test_block_slab_bottom" },
+    "type=top": { "model": "tm13:block/test_block_slab_top" },
+    "type=double": { "model": "tm13:block/test_block_slab" }
+  }
+}

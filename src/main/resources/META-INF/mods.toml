@@ -1,0 +1,7 @@
+modLoader="javafml"
+loaderVersion="[24,)"
+[[mods]]
+modId="tm13"
+version="1.2"
+displayName="Test Mod 13"
+description='''Test Mod 13 Description'''

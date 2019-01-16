@@ -1,0 +1,51 @@
+buildscript {
+    repositories {
+        maven { url = 'https://files.minecraftforge.net/maven' }
+        jcenter()
+        mavenCentral()
+    }
+    dependencies {
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '3.+', changing: true
+    }
+}
+apply plugin: 'net.minecraftforge.gradle'
+apply plugin: 'eclipse'
+
+version = '1.4-1.13'
+group = 'coffeecatteam.tm13'
+archivesBaseName = 'tm13'
+
+sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
+
+minecraft {
+    mappings channel: 'snapshot', version: '20180921-1.13'
+    
+    runs {
+        client = {
+            workingDirectory project.file('run').canonicalPath
+            source sourceSets.main
+        }
+        server = {
+            workingDirectory project.file('run').canonicalPath
+        }
+    }
+}
+
+dependencies {
+    minecraft 'net.minecraftforge.test:forge:1.13-24.0.81-1.13-pre'
+}
+
+processResources {
+    inputs.property 'version', project.version
+    inputs.property 'mcversion', '1.13'
+
+    from(sourceSets.main.resources.srcDirs) {
+        include 'META_INF/mods.toml'
+                
+        expand 'version':project.version, 'mcversion': '1.13'
+    }
+
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'META_INF/mods.toml'
+    }
+}

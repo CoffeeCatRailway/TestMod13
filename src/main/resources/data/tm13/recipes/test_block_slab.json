@@ -1,0 +1,15 @@
+{
+  "type": "crafting_shaped",
+  "pattern": [
+    "TTT"
+  ],
+  "key": {
+    "T": {
+      "item": "tm13:test_block"
+    }
+  },
+  "result": {
+    "item": "tm13:test_block_slab",
+    "count": 6
+  }
+}

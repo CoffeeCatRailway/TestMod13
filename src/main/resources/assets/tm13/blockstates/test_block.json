@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": [
+      { "model": "tm13:block/test_block" }
+    ]
+  }
+}
