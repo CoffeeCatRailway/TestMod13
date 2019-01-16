@@ -4,5 +4,8 @@
   "block.tm13.test_block": "Test Block",
   "block.tm13.test_block_slab": "Test Block Slab",
 
+  "biome.tm13.test_biome": "Test Biome",
+  "biome.tm13.mega_canyons": "Mega Canyons",
+
   "itemGroup.tm13": "Test Mod 13"
 }
