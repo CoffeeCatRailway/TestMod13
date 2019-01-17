@@ -21,9 +21,9 @@ import java.util.Set;
 @Mod.EventBusSubscriber(modid = TestMod13.MODID)
 public class RegistrationHandler {
 
-    public static final Set<Item> ITEMS = new HashSet<>();
-    public static final Set<Block> BLOCKS = new HashSet<>();
-    public static final Set<Biome> BIOMES = new HashSet<>();
+    private static final Set<Item> ITEMS = new HashSet<>();
+    private static final Set<Block> BLOCKS = new HashSet<>();
+    private static final Set<Biome> BIOMES = new HashSet<>();
 
     public static void init() {
         InitItem.init();

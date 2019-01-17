@@ -14,7 +14,7 @@ public class InitBiome {
     public static final Biome MEGA_CANYONS = new BiomeMegaCanyons("mega_canyons");
 
     public static void init() {
-        RegistrationHandler.BIOMES.add(TEST_BIOME);
-        RegistrationHandler.BIOMES.add(MEGA_CANYONS);
+        RegistrationHandler.registerBiome(TEST_BIOME);
+        RegistrationHandler.registerBiome(MEGA_CANYONS);
     }
 }
