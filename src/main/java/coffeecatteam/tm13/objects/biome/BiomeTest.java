@@ -5,7 +5,6 @@ import coffeecatteam.tm13.objects.block.base.BlockBaseSlab;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EnumCreatureType;
-import net.minecraft.init.Blocks;
 import net.minecraft.state.properties.SlabType;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.GenerationStage;
@@ -24,8 +23,9 @@ import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
  */
 public class BiomeTest extends BiomeBase {
 
+    public static final IBlockState WATER_TEST_SLAB = InitBlock.TEST_BLOCK_SLAB.getDefaultState().with(BlockBaseSlab.TYPE, SlabType.BOTTOM).with(BlockBaseSlab.WATERLOGGED, true).with(BlockBaseSlab.LAVALOGGED, false);
     public static final IBlockState DOUBLE_TEST_SLAB = InitBlock.TEST_BLOCK_SLAB.getDefaultState().with(BlockBaseSlab.TYPE, SlabType.DOUBLE).with(BlockBaseSlab.WATERLOGGED, false).with(BlockBaseSlab.LAVALOGGED, false);
-    public static final SurfaceBuilderConfig TEST_SURFACE = new SurfaceBuilderConfig(DOUBLE_TEST_SLAB, NETHERRACK, END_STONE);
+    public static final SurfaceBuilderConfig TEST_SURFACE = new SurfaceBuilderConfig(WATER_TEST_SLAB, DOUBLE_TEST_SLAB, SAND);
 
     public BiomeTest(String id) {
         super(id, new BiomeBuilder().surfaceBuilder(new CompositeSurfaceBuilder<>(DEFAULT_SURFACE_BUILDER, TEST_SURFACE)).precipitation(Biome.RainType.RAIN).category(Biome.Category.PLAINS).depth(0.5F).scale(2.0F).temperature(0.1F).downfall(0.1F).waterColor(4159204).waterFogColor(329011).parent(null));
