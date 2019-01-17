@@ -1,8 +1,8 @@
 package coffeecatteam.tm13.init;
 
 import coffeecatteam.tm13.TestMod13;
-import coffeecatteam.tm13.objects.block.base.BlockBaseSlab;
 import coffeecatteam.tm13.objects.block.BlockTest;
+import coffeecatteam.tm13.objects.block.base.BlockBaseSlab;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 

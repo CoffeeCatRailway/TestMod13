@@ -1,6 +1,6 @@
 package coffeecatteam.tm13.objects.block;
 
-import coffeecatteam.tm13.objects.block.base.BlockBaseCustomShape;
+import coffeecatteam.tm13.objects.block.base.BlockBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.IBucketPickupHandler;
 import net.minecraft.block.ILiquidContainer;
@@ -23,7 +23,7 @@ import javax.annotation.Nullable;
  * @author CoffeeCatRailway
  * Created: 15/01/2019
  */
-public abstract class BlockWLLogged extends BlockBaseCustomShape implements IBucketPickupHandler, ILiquidContainer {
+public abstract class BlockWLLogged extends BlockBase implements IBucketPickupHandler, ILiquidContainer {
 
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     public static final BooleanProperty LAVALOGGED = BooleanProperty.create("lavalogged");

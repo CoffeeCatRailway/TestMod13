@@ -2,8 +2,17 @@ package coffeecatteam.tm13.objects.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ShapeUtils;
 import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.world.IBlockReader;
+import net.minecraft.world.World;
 
 /**
  * @author CoffeeCatRailway
@@ -23,8 +32,13 @@ public class BlockTest extends BlockWLLogged {
     }
 
     @Override
-    public VoxelShape getShape() {
+    public VoxelShape getShape(IBlockState state, IBlockReader reader, BlockPos pos) {
         VoxelShape shape = ShapeUtils.or(SHAPE_BASE, ShapeUtils.or(SHAPE_POLE, ShapeUtils.or(SHAPE_POLE_SUPPORT_FRONT, ShapeUtils.or(SHAPE_POLE_SUPPORT_BACK, ShapeUtils.or(SHAPE_POLE_SUPPORT_LEFT, SHAPE_POLE_SUPPORT_RIGHT)))));
         return shape;
+    }
+
+    @Override
+    public boolean onBlockActivated(IBlockState state, World world, BlockPos pos, EntityPlayer player, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ) {
+        return player.addItemStackToInventory(new ItemStack(Items.DIAMOND, world.getRandom().nextInt(64) + 1));
     }
 }
